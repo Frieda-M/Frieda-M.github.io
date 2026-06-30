@@ -1,0 +1,28 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: KaiseiDecol-Regular;
+  padding: 2px;
+  font-size: 16px;
+}
+
+h1{
+  font-size: 1rem;
+}
+
+img{
+  max-width: 2000px;
+}
+
+.katalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.card{
+  display: flex;
+}
+
