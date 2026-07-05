@@ -7,6 +7,21 @@ body {
   font-family: KaiseiDecol-Regular;
   padding: 2px;
   font-size: 16px;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.page-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: white;
+  padding: 12px 8px;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 3em;
 }
 
 h1{
@@ -15,6 +30,28 @@ h1{
 
 img{
   max-width: 2000px;
+}
+
+.image-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  cursor: zoom-out;
+}
+
+.image-overlay.active {
+  display: flex;
+}
+
+.image-overlay img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .katalog-grid {
@@ -26,11 +63,20 @@ img{
   position: relative;
   display: block;
   overflow: visible;
+  height: fit-content;
 }
 
 .card-title {
   position: absolute;
   top: 10px;
+  left: 10px;
+  z-index: 2;
+  font-size: 1.5em;
+}
+
+.card-content {
+  position: absolute;
+  bottom: 10px;
   left: 10px;
   z-index: 2;
 }
@@ -51,4 +97,5 @@ img{
   height: auto;
   max-width: none;
   max-height: none;
+  cursor: zoom-in;
 }

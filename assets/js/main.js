@@ -90,8 +90,8 @@ function renderKatalog(items) {
         html += `
             
             <div class="card">
-                <div class="card-title">
-                    <h1>${item.was}</h1>
+                <div class="card-title" style="color: ${item.textFarbe};">
+                    ${item.was}
                 </div>
 
                 <div class="card-image">
@@ -100,11 +100,11 @@ function renderKatalog(items) {
 
                 <div class="card-content">
 
-                    <div class="card-date">
+                    <div class="card-date" style="color: ${item.textFarbe};">
                         ${item.wann}
                     </div>
 
-                    <div class="card-author ${authorClass}">
+                    <div class="card-author ${authorClass}" style="color: ${item.textFarbe};">
                         ${item.wo}
                     </div>
 
@@ -122,4 +122,47 @@ function renderKatalog(items) {
 
     // Insert the generated HTML into the catalogue container
     katalog.innerHTML = html;
+
+    // Enable image overlay for all rendered cards
+    bindImageOverlay();
+}
+
+function bindImageOverlay() {
+    let overlay = document.getElementById('image-overlay');
+
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.id = 'image-overlay';
+        overlay.className = 'image-overlay';
+
+        const image = document.createElement('img');
+        image.alt = 'Fullscreen preview';
+        overlay.appendChild(image);
+
+        document.body.appendChild(overlay);
+    }
+
+    const overlayImage = overlay.querySelector('img');
+
+    const closeOverlay = () => {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    overlay.addEventListener('click', closeOverlay);
+
+    document.addEventListener('keydown', function handleKeydown(event) {
+        if (event.key === 'Escape') {
+            closeOverlay();
+        }
+    });
+
+    document.querySelectorAll('.card-image img').forEach(imageElement => {
+        imageElement.addEventListener('click', () => {
+            overlayImage.src = imageElement.src;
+            overlayImage.alt = imageElement.alt;
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
 }
