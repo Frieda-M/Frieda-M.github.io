@@ -24,18 +24,30 @@ img{
 
 .card {
   position: relative;
-  display: inline-block;
+  display: block;
+  overflow: hidden;
 }
 
 .card-title {
   position: absolute;
-  z-index: 1;
-  left: 10px;
   top: 10px;
+  left: 10px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.card-title h1 {
+  margin: 0;
 }
 
 .card-image {
   display: block;
   position: relative;
-  z-index: 0;
+  z-index: 1;
+}
+
+.card-image img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
