@@ -112,7 +112,6 @@ function renderKatalog(items) {
 
             </div>
 
-            // Empty card for our grid layout
             <div class="card">
             </div>
         `;
