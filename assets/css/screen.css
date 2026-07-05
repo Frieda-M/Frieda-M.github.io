@@ -23,7 +23,7 @@ img{
 }
 
 .card{
-  display: flex;
+  display: relative;
 }
 
 .card-title {

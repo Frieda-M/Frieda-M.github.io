@@ -100,7 +100,7 @@ function renderKatalog(items) {
 
                 <div class="card-content">
 
-                    <div class="card-title">
+                    <div class="card-date">
                         ${item.wann}
                     </div>
 
