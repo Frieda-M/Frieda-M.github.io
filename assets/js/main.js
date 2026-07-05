@@ -88,10 +88,11 @@ function renderKatalog(items) {
 
         // Add one card to the HTML string
         html += `
-
-            <h1>${item.was}</h1>
             
             <div class="card">
+                <div class="card-title">
+                    <h1>${item.was}</h1>
+                </div>
 
                 <div class="card-image">
                     <img src="${item['@image']}" alt="${item.was}">
