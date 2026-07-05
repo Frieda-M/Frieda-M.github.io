@@ -22,8 +22,9 @@ img{
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
-.card{
-  display: relative;
+.card {
+  position: relative;
+  display: inline-block;
 }
 
 .card-title {
@@ -31,4 +32,10 @@ img{
   z-index: 1;
   left: 10px;
   top: 10px;
+}
+
+.card-image {
+  display: block;
+  position: relative;
+  z-index: 0;
 }
