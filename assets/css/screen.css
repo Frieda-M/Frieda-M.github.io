@@ -26,3 +26,9 @@ img{
   display: flex;
 }
 
+.card-title {
+  position: absolute;
+  z-index: 1;
+  left: 10px;
+  top: 10px;
+}
